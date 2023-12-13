@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+    <link rel="shortcut icon" href="images/iynt_logo.jpg">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+</head>
+<body>
+    <div class="results">
+        <form action="download" method="post">
+                <p>
+                    <br>Enter SF name <i>(SF 1 in Group A)</i>
+                    <br><input type="text" name="sf_name">
+                    <br>Enter number of teams in SF
+                    <br><input type="text" name="number_teams">
+                </p>
+
+                <p>
+                    <br>Enter team's indexes with a space
+                    <br><input type="text" name="teams">
+                </p>
+
+                <p>
+                    <br>Enter jury's indexes with a space
+                    <br><input type="text" name="jury">
+                </p>
+
+                <p>
+                    <br><h3>First time</h3>
+
+                    <br>Enter rejected problem
+                    <br><input type="text" name="r_problem1">
+
+                    <br>Enter accepted problem
+                    <br><input type="text" name="a_problem1">
+
+                    <br>Enter participant's indexes <br>with a space <i>(reporter, opponent, reviewer)</i>
+                    <br><input type="text" name="participant1">
+
+                    <br>Enter reporter's marks
+                    <br><input type="text" name="repm1">
+
+                    <br>Enter opponent's marks
+                    <br><input type="text" name="oppm1">
+
+                    <br>Enter reviewer's marks
+                    <br><input type="text" name="revm1">
+                </p>
+
+                <p>
+                    <br><h3>Second time</h3>
+
+                    <br>Enter rejected problem
+                    <br><input type="text" name="r_problem2">
+
+                    <br>Enter accepted problem
+                    <br><input type="text" name="a_problem2">
+
+                    <br>Enter participant's indexes <br>with a space <i>(reporter, opponent, reviewer)</i>
+                    <br><input type="text" name="participant2">
+
+                    <br>Enter reporter's marks
+                    <br><input type="text" name="repm2">
+
+                    <br>Enter opponent's marks
+                    <br><input type="text" name="oppm2">
+
+                    <br>Enter reviewer's marks
+                    <br><input type="text" name="revm2">
+                </p>
+
+                <p>
+                    <br><h3>Therd time</h3>
+
+                    <br>Enter rejected problem
+                    <br><input type="text" name="r_problem3">
+
+                    <br>Enter accepted problem
+                    <br><input type="text" name="a_problem3">
+
+                    <br>Enter participant's indexes <br>with a space <i>(reporter, opponent, reviewer)</i>
+                    <br><input type="text" name="participant3">
+
+                    <br>Enter reporter's marks
+                    <br><input type="text" name="repm3">
+
+                    <br>Enter opponent's marks
+                    <br><input type="text" name="oppm3">
+
+                    <br>Enter reviewer's marks
+                    <br><input type="text" name="revm3">
+                </p>
+
+                <p>
+                    <br>Enter file name <i>(results1A)</i>
+                    <br><input type="text" name="file_name">
+                </p>
+
+                <input class="accept" type="submit" value="Download" id="download">
+        </form>
+    </div>
+</body>
+</html>

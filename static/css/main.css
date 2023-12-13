@@ -1,0 +1,44 @@
+body {
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.main_buttons {
+    margin-top: 100px;
+}
+
+.mbtn {
+    display: inline-block;
+    background: #8C959D;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.results {
+    margin: 50px;
+}
+
+input {
+    background: #8C959D;
+    height: 30px;
+    width: 400px;
+    text-align: center;
+    border-radius: 3px;
+    border: none;
+    margin: 10px;
+}
+
+.accept {
+    background: #1eff00;
+    height: 40px;
+    width: 200px;
+    text-align: center;
+    border-radius: 3px;
+    border: none;
+    margin: 10px;
+}
