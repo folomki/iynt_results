@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Configuration</title>
+    <link rel="shortcut icon" href="images/iynt_logo.jpg">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
 </head>
 <body>
+    <div class="conf">
+        <form action="cdownload" method="post">
+            <p>
+                <br>Enter number of teams
+                <br><input type="text" name="number">
+            </p>
 
+            <input class="accept" type="submit" value="Download" id="cdownload">
+        </form>
+    </div>
 </body>
 </html>

@@ -1,35 +1,65 @@
-from flask import Flask, render_template, request, flash, send_file
+from flask import Flask, render_template, request, send_file
 import os
 app = Flask(__name__)
 app.secret_key = "anton"
 
 @app.route("/")
 def index():
+    delete()
+
     return render_template('index.html')
 
 
 @app.route("/configuration")
 def config():
+    delete()
+
     return render_template('configuration.html')
+
+
+@app.route("/cdownload", methods=['POST', 'GET'])
+def cdownload():
+    number = int(request.form['number']) // 3 + 1
+    file_name = "configuration.txt"
+
+    with open(file_name, 'a') as file:
+        file.write((str(number) + ' ')*4 + '3 ' + '1')
+
+    return send_file(file_name, as_attachment=True)
 
 
 @app.route("/intro")
 def intro():
+    delete()
+
     return render_template('intro.html')
+
+
+@app.route("/idownload", methods=['POST', 'GET'])
+def idownload():
+    file_name = "resultsintro.txt"
+
+    with open(file_name, 'a') as file:
+        file.write('Intro\n')
+        file.write(str(request.form['jury']) + '\n')
+
+        for i in range(1, 34):
+            file.write(str(request.form[('team' + str(i))]) + '\n')
+            file.write(str(request.form[('mark' + str(i))]) + '\n')
+
+    return send_file(file_name, as_attachment=True)
+
 
 
 @app.route("/results")
 def results():
-    for file in os.listdir():
-        if file.endswith(".txt"):
-            file_path = os.path.join(file)
-            os.remove(file_path)
+    delete()
 
     return render_template('results.html')
 
 
-@app.route("/download", methods=['POST', 'GET'])
-def page():
+@app.route("/rdownload", methods=['POST', 'GET'])
+def rdownload():
     file_name = str(request.form['file_name']) + '.txt'
     number_teams = int(request.form['number_teams'])
 
@@ -64,3 +94,10 @@ def page():
             file.write(str(request.form['revm3']) + '\n')
 
     return send_file(file_name, as_attachment=True)
+
+
+def delete():
+    for file in os.listdir():
+        if file.endswith(".txt"):
+            file_path = os.path.join(file)
+            os.remove(file_path)
