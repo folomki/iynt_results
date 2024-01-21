@@ -9,92 +9,77 @@
 <body>
     <div class="results">
         <form action="rdownload" method="post">
-                <p>
-                    <br>Enter SF name <i>(SF 1 in Group A)</i>
-                    <br><input type="text" name="sf_name">
-                    <br>Enter number of teams in SF
-                    <br><input type="text" name="number_teams">
-                </p>
 
                 <p>
-                    <br>Enter team's indexes with a space
-                    <br><input type="text" name="teams">
+                    <h3>Jury:</h3>
+                    <br>
+                    {% for i in range(number_of_jury) %}
+                        <select class="jurylist" name="jury{{ i }}">
+                            {% for j in jury %}
+                                <option>{{ j }}</option>
+                            {% endfor %}
+                        </select>
+                    {% endfor %}
                 </p>
 
+                {% for k in range(number_of_teams) %}
                 <p>
-                    <br>Enter jury's indexes with a space
-                    <br><input type="text" name="jury">
-                </p>
-
-                <p>
-                    <br><h3>Stage I</h3>
+                    <h3>Stage {{ "I" * (k + 1) }}</h3>
 
                     <br>Enter rejected problem
-                    <br><input type="text" name="r_problem1">
+                    <br>
+
+                    {% for n in range(3) %}
+                        <select class="problems" name="r_problem{{ n }}_{{ k }}">
+                            {% for j in problems %}
+                                <option>{{ j }}</option>
+                            {% endfor %}
+                        </select>
+                    {% endfor %}
 
                     <br>Enter accepted problem
-                    <br><input type="text" name="a_problem1">
-
-                    <br>Enter participant's indexes with a space<br><i>(reporter, opponent and reviewer in Stage I)</i>
-                    <br><input type="text" name="participant1">
-
-                    <br>Enter reporter's points
-                    <br><input type="text" name="repm1">
-
-                    <br>Enter opponent's points
-                    <br><input type="text" name="oppm1">
-
-                    <br>Enter reviewer's points
-                    <br><input type="text" name="revm1">
-                </p>
-
-                <p>
-                    <br><h3>Stage II</h3>
-
-                    <br>Enter rejected problem
-                    <br><input type="text" name="r_problem2">
-
-                    <br>Enter accepted problem
-                    <br><input type="text" name="a_problem2">
-
-                    <br>Enter participant's indexes with a space<br><i>(reporter, opponent and reviewer in Stage II)</i>
-                    <br><input type="text" name="participant2">
+                    <br>
+                    <select class="problems" name="a_problem{{ k }}">
+                        {% for j in problems %}
+                            <option>{{ j }}</option>
+                        {% endfor %}
+                    </select>
 
                     <br>Enter reporter's points
-                    <br><input type="text" name="repm2">
+                    <select class="players" name="rep{{ k }}">
+                        {% for j in players_in_sf[(0 + k) % 3] %}
+                            <option>{{ j }}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="text" name="repp{{ k }}">
 
                     <br>Enter opponent's points
-                    <br><input type="text" name="oppm2">
+                    <select class="players" name="opp{{ k }}">
+                        {% for j in players_in_sf[(1 + k) % 3] if number_of_teams % 3 == 0 %}
+                            <option>{{ j }}</option>
+                        {% endfor %}
+                        {% for j in players_in_sf[(1 + k) % 2] if number_of_teams % 2 == 0 %}
+                            <option>{{ j }}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="text" name="oppp{{ k }}">
 
                     <br>Enter reviewer's points
-                    <br><input type="text" name="revm2">
+                    <select class="players" name="rew{{ k }}">
+                        {% for j in players_in_sf[(2 + k) % 3] %}
+                            <option>{{ j }}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="text" name="revp{{ k }}">
                 </p>
+                {% endfor %}
 
-                <p>
-                    <br><h3>Stage III</h3>
-
-                    <br>Enter rejected problem
-                    <br><input type="text" name="r_problem3">
-
-                    <br>Enter accepted problem
-                    <br><input type="text" name="a_problem3">
-
-                    <br>Enter participant's indexes with a space<br><i>(reporter, opponent and reviewer in Stage III)</i>
-                    <br><input type="text" name="participant3">
-
-                    <br>Enter reporter's points
-                    <br><input type="text" name="repm3">
-
-                    <br>Enter opponent's points
-                    <br><input type="text" name="oppm3">
-
-                    <br>Enter reviewer's points
-                    <br><input type="text" name="revm3">
-                </p>
 
                 <p>
                     <br>Enter file name <i>(results1A)</i>
                     <br><input type="text" name="file_name">
+                    <br>Enter SF name <i>(SF 1 in Group A)</i>
+                    <br><input type="text" name="sf_name">
                 </p>
 
                 <input class="accept" type="submit" value="Download" id="rdownload">

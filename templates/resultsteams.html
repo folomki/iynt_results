@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teams in Intro</title>
+    <link rel="shortcut icon" href="images/logo32.png">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+</head>
+<body>
+    <div class="intro_teams">
+        <form action="results" method="post">
+            <p>
+                <h3>Teams in SF</h3>
+                Enter the names of the teams in the SF in the order in which they competed in the <b>I stage</b>
+            </p>
+
+            <p>
+                <br>
+                Team 1:
+                <select name="team1">
+                    {% for line in teams %}
+                        <option>{{ line }}</option>
+                    {% endfor %}
+                </select>
+            </p>
+
+            <p>
+                <br>
+                Team 2:
+                <select name="team2">
+                    {% for line in teams %}
+                        <option>{{ line }}</option>
+                    {% endfor %}
+                </select>
+            </p>
+
+            <p>
+                <br>
+                Team 3:
+                <select name="team3">
+                    {% for line in teams %}
+                        <option>{{ line }}</option>
+                    {% endfor %}
+                </select>
+            </p>
+
+            <p>
+                <br>Enter the number of jury in the SF
+                <br><input type="text" class="teamsandjury" name="number_of_jury">
+            </p>
+
+            <input class="accept" type="submit" value="Accept" id="results">
+        </form>
+    </div>
+</body>
+</html>

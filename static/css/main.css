@@ -1,21 +1,65 @@
 body {
     background-color: rgb(255, 255, 255);
     text-align: center;
+    font-family: lato,sans-serif;
+    font-weight: regular;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+.h3 {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+p {
+    margin: 50px;
 }
 
 .main_buttons {
-    margin-top: 100px;
+    margin-top: 250px;
 }
 
-.mbtn {
-    display: inline-block;
-    background: #8C959D;
-    color: #fff;
-    padding: 1rem 1.5rem;
+.intro_teams {
+    margin-top: 150px;
+}
+
+.intro {
+    margin: 50px;
+}
+
+.oneintroteam {
+    margin-top: 25px;
+}
+
+.b_index {
+    font-family: lato,sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    letter-spacing: 0.1em;
     text-decoration: none;
-    border-radius: 3px;
-    border: none;
-    cursor: pointer;
+    color: #000000;
+    display: inline-block;
+    padding: 10px 40px 10px 40px;
+    position: relative;
+    border: 3px solid #000000;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.accept {
+    font-family: lato,sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    color: #000000;
+    background-color: #3cff00;
+    display: inline-block;
+    padding: 10px 40px 10px 40px;
+    position: relative;
+    border: 3px solid #000000;
+    border-radius: 20px;
     margin: 10px;
 }
 
@@ -24,21 +68,57 @@ body {
 }
 
 input {
-    background: #8C959D;
-    height: 30px;
-    width: 400px;
-    text-align: center;
-    border-radius: 3px;
-    border: none;
+    font-family: lato,sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    color: #000000;
+    display: inline-block;
+    padding: 10px 20px 10px 20px;
+    position: relative;
+    border: 3px solid #000000;
+    border-radius: 20px;
     margin: 10px;
 }
 
-.accept {
-    background: #1eff00;
-    height: 40px;
-    width: 200px;
+.input_jury {
+    width: 40px;
     text-align: center;
-    border-radius: 3px;
-    border: none;
+}
+
+.yellow_cards {
+    width: 40px;
+    text-align: center;
+}
+
+.teamsandjury {
+    width: 40px;
+    text-align: center;
+}
+
+.number-conf {
+    width: 40px;
+    text-align: center;
+}
+
+select {
+    font-family: lato,sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    color: #000000;
+    display: inline-block;
+    padding: 10px 10px 10px 10px;
+    position: relative;
+    border: 3px solid #000000;
+    border-radius: 20px;
     margin: 10px;
+    width: 250px;
+    text-align: center;
+}
+
+.jurylist {
+    font-size: 0.7em;
 }

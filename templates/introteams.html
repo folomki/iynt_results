@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teams in Intro</title>
+    <link rel="shortcut icon" href="images/logo32.png">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+</head>
+<body>
+    <div class="intro_teams">
+        <form action="intro" method="post">
+                <p>
+                    <br>Enter the number of teams in the Intro
+                    <br><input type="text" class="teamsandjury" name="number_of_teams">
+                </p>
+
+                <p>
+                    <br>Enter the number of jury in the Intro
+                    <br><input type="text" class="teamsandjury" name="number_of_jury">
+                </p>
+
+                <input class="accept" type="submit" value="Accept" id="intro">
+        </form>
+    </div>
+</body>
+</html>
