@@ -16,8 +16,10 @@ players_in_sf = []
 @app.route("/")
 def index():
     functions.delete()
+    with open("files/tournament.txt", "r") as file:
+        tournament = file.readline().strip()
 
-    return render_template('index.html')
+    return render_template('index.html', tournament=tournament)
 
 
 @app.route("/configuration")

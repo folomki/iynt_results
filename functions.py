@@ -90,11 +90,10 @@ def problem_list(filename):
 def problem_index(problem):
     with open('files/problemList.txt', 'r') as file:
         k = 0
-        s = ''
 
         for line in file:
-            if line.strip() == "None":
-                return s
+            if problem == "None":
+                return ""
 
             if line.strip() != problem:
                 k += 1
@@ -107,11 +106,3 @@ def delete():
         if file.endswith(".txt"):
             file_path = os.path.join(file)
             os.remove(file_path)
-
-
-def obnylenie(number_of_team, number_of_jury, teams_in_SF, players_in_sf):
-    number_of_teams = 3
-    number_of_jury = 0
-    teams_in_SF = []
-    players_in_sf = []
-    return number_of_team, number_of_jury, teams_in_SF, players_in_sf

@@ -26,7 +26,7 @@
                 <p>
                     <h3>Stage {{ "I" * (k + 1) }}</h3>
 
-                    <br>Enter rejected problem
+                    <br>Select rejected problems
                     <br>
 
                     {% for n in range(3) %}
@@ -37,7 +37,7 @@
                         </select>
                     {% endfor %}
 
-                    <br>Enter accepted problem
+                    <br>Select accepted problem
                     <br>
                     <select class="problems" name="a_problem{{ k }}">
                         {% for j in problems %}
