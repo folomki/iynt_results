@@ -95,7 +95,7 @@ def problem_index(problem):
             if problem == "None":
                 return ""
 
-            if line.strip() != problem:
+            elif line.strip() != problem:
                 k += 1
             else:
                 return str(k)
